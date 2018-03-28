@@ -23,16 +23,13 @@ public class Chemistry {
     
     initializeMassMapping(sc, n);
     
-    String input = sc.nextLine(); // chemical formula
-                       
+    String input = sc.nextLine(); // chemical formula                  
     char[] formula = input.toCharArray();
     
-    processInput(formula);
-    
-    int total = accumulate();
+    processInput(formula); // Process the input and compute the mass 
+    int total = accumulate(); // Add up all of the inputs outside the brackets
     
     System.out.println(total);
-    
     sc.close();
   }
   
