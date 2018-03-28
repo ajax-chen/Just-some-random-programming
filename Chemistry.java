@@ -1,6 +1,6 @@
 /**
- * Name          : Chen Yizhao
- * Matric number : A0168759E
+ * Name          : Yizhao
+ * Matric number :
  */
 
 import java.util.*;
