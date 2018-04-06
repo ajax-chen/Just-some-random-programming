@@ -58,6 +58,11 @@ public class BoardGame {
     int collectDice = numDice + cells[position].getNumDice();
     int collectMax = maxDice + cells[position].getMaxDice();
     
+    
+    
+    
+    
+    
     // Transition:
     for(int i = collectDice; i <= collectMax; i++) {
       int result = getMax(cells, position+i, collectDice, collectMax, max); // Move forward by all possible sum of dice rolls
