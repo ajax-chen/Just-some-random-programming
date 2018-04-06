@@ -55,15 +55,16 @@ public class BoardGame {
       return numDice;
     }
     
-    int collectDice = numDice + cells[position].getNumDice();
-    int collectMax = maxDice + cells[position].getMaxDice();
-   
+    numDice = numDice + cells[position].getNumDice(); // Increase number of dices on hand
+    maxDice = maxDice + cells[position].getMaxDice(); // Increase the highest possible roll
+    
+    
     
     
     // Transition:
-    for(int i = collectDice; i <= collectMax; i++) {
-      int result = getMax(cells, position+i, collectDice, collectMax, max); // Move forward by all possible sum of dice rolls
-      max = Math.max(result, max);
+    for(int i = numDice; i <= maxDice; i++) {                        // Only test possible steps from min to max
+      int result = getMax(cells, position+i, numDice, maxDice, max); // Move forward by all possible sum of dice rolls
+      max = Math.max(result, max);                                   // Find the max after getting each result
     }
     
     return max;
