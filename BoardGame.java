@@ -1,6 +1,6 @@
 /**
- * Name   : Chen Yizhao
- * Matric No.  : A0168759E
+ * Name   : Yizhao
+ * Matric No.  :
  * PLab Acct.  :
  */
 
@@ -74,13 +74,11 @@ public class BoardGame {
 }
 
 class Cell {
-  //private int _index;
   private boolean _isBlocked;
   private int _minDice;
   private int _maxDice;
   
   public Cell() {
-    //this._index = index;
     this._isBlocked = false;
     this._minDice = 0;
     this._maxDice = 0;
