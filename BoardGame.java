@@ -57,10 +57,7 @@ public class BoardGame {
     
     int collectDice = numDice + cells[position].getNumDice();
     int collectMax = maxDice + cells[position].getMaxDice();
-    
-    
-    
-    
+   
     
     
     // Transition:
