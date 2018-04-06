@@ -59,11 +59,11 @@ public class BoardGame {
       maxCount.add(0);             //Add 0 to the maxCount if exceed or isblocked
     } else {
       
-      int collectDice = minDice + cells.get(idx).getMin();
-      int collectMax = maxDice + cells.get(idx).getMax();
+      int collectDice = minDice + cells.get(idx).getMin(); // Accumulate all the dice we have landed on
+      int collectMax = maxDice + cells.get(idx).getMax(); // Accumulate all the sum of sides
       
-      for (int i = idx + collectDice; i < idx + collectMax + 1; i++) {
-        getDice(i, collectDice, collectMax);
+      for (int i = idx + collectDice; i < idx + collectMax + 1; i++) { // Only test possible steps from min to max
+        getDice(i, collectDice, collectMax); // Recursively take the next step
       }
     }
   }
