@@ -59,6 +59,7 @@ public class BoardGame {
       maxCount.add(0);             //Add 0 to the maxCount if exceed or isblocked
     } else {
       
+      
       int collectDice = minDice + cells.get(idx).getMin(); // Accumulate all the dice we have landed on
       int collectMax = maxDice + cells.get(idx).getMax(); // Accumulate all the sum of sides
       
