@@ -10,13 +10,13 @@ private void resize() {
 
             size = 0;
 
-            for (int i = 0; i < oldTable.length; i++)
+            for (int i = 0; i < oldTable.length; i++) {
 
-                  if (oldTable[i] != null
-
-                             && oldTable[i] != DeletedEntry.getUniqueDeletedEntry())
+                  if (oldTable[i] != null && oldTable[i] != DeletedEntry.getUniqueDeletedEntry()) {
 
                         put(oldTable[i].getKey(), oldTable[i].getValue());
+                  }
+            }
 
       }
       
