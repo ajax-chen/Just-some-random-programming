@@ -1,0 +1,57 @@
+private void resize() {
+
+            int tableSize = 2 * table.length;
+
+            maxSize = (int) (tableSize * threshold);
+
+            HashEntry[] oldTable = table;
+
+            table = new HashEntry[tableSize];
+
+            size = 0;
+
+            for (int i = 0; i < oldTable.length; i++)
+
+                  if (oldTable[i] != null
+
+                             && oldTable[i] != DeletedEntry.getUniqueDeletedEntry())
+
+                        put(oldTable[i].getKey(), oldTable[i].getValue());
+
+      }
+      
+      
+  private void resize() {
+            // Double the size of the table, and redistribute the
+            // key/value pairs to their proper locations in the
+            // new table.
+         ListNode[] newtable = new ListNode[table.length*2];
+         for (int i = 0; i < table.length; i++) {
+               // Move all the nodes in linked list number i 
+               // into the new table.  No new ListNodes are 
+               // created.  The existing ListNode for each
+               // key/value pair is moved to the newtable.
+               // This is done by changing the "next" pointer
+               // in the node and by making a pointer in the 
+               // new table point to the node.
+            ListNode list = table[i]; // For traversing linked list number i.
+            while (list != null) {
+                  // Move the node pointed to by list to the new table.
+               ListNode next = list.next;  // The is the next node in the list.
+                                           // Remember it, before changing
+                                           // the value of list!
+               int hash = (Math.abs(list.key.hashCode())) % newtable.length;
+                    // hash is the hash code of list.key that is 
+                    // appropriate for the new table size.  The
+                    // next two lines add the node pointed to by list
+                    // onto the head of the linked list in the new table
+                    // at position number hash.
+               list.next = newtable[hash];
+               newtable[hash] = list;
+               list = next;  // Move on to the next node in the OLD table.
+            }
+         }
+         table = newtable;  // Replace the table with the new table.
+      } // end resize()
+
+   } // end class HashTable
