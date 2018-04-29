@@ -53,5 +53,3 @@ private void resize() {
          }
          table = newtable;  // Replace the table with the new table.
       } // end resize()
-
-   } // end class HashTable
